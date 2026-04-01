@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Syne', sans-serif; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-700 text-white font-medium px-5 py-2.5 rounded-xl
+           transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow-md;
+  }
+  .btn-secondary {
+    @apply bg-white hover:bg-slate-50 text-slate-700 font-medium px-5 py-2.5 rounded-xl
+           border border-slate-200 hover:border-slate-300 transition-all duration-200 active:scale-95 shadow-sm;
+  }
+  .btn-danger {
+    @apply bg-red-500 hover:bg-red-600 text-white font-medium px-5 py-2.5 rounded-xl
+           transition-all duration-200 active:scale-95 shadow-sm;
+  }
+  .card { @apply bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-200; }
+  .input {
+    @apply w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-brand-500
+           focus:ring-2 focus:ring-brand-100 outline-none transition-all duration-200
+           bg-white text-slate-800 placeholder-slate-400 text-sm;
+  }
+  .label { @apply block text-sm font-medium text-slate-600 mb-1.5; }
+  .badge { @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold; }
+  .badge-green  { @apply badge bg-emerald-50 text-emerald-700; }
+  .badge-amber  { @apply badge bg-amber-50 text-amber-700; }
+  .badge-red    { @apply badge bg-red-50 text-red-700; }
+  .badge-blue   { @apply badge bg-blue-50 text-blue-700; }
+  .badge-slate  { @apply badge bg-slate-100 text-slate-600; }
+  .section-title { @apply font-heading text-2xl font-bold text-slate-900; }
+  .page-container { @apply max-w-6xl mx-auto px-4 sm:px-6 py-8; }
+}
+
+.leaflet-container { border-radius: 1rem; }
+.leaflet-control-attribution { display: none !important; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }

@@ -1,0 +1,6 @@
+@echo off
+echo Installing dependencies...
+cd frontend
+npm install
+echo Starting CampusRide Frontend...
+npm run dev
